@@ -82,7 +82,22 @@ streamlit run app.py
 
 ## 📊 Resultados e demonstração
 
-**Capturas de tela:** serão adicionadas imagens da aplicação em funcionamento.
+### 📸 Capturas de tela
+
+#### Painel principal
+![Painel Principal](screenshots/Painel%20Principal.png)
+
+#### Registro de alimentos
+![Registro de Alimentos](screenshots/Registro%20de%20Alimentos.png)
+
+#### Histórico
+![Histórico](screenshots/Hist%C3%B3rico.png)
+
+#### Consumo por alimento
+![Consumo Por Alimento](screenshots/Consumo%20Por%20Alimento.png)
+
+#### Exportação de dados
+![Exportação de Dados](screenshots/Exporta%C3%A7%C3%A3o%20de%20Dados.png)
 
 **Vídeo de demonstração:** link a ser adicionado.
 
