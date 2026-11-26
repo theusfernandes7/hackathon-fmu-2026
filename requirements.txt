@@ -2,3 +2,6 @@ streamlit
 pandas
 matplotlib
 mysql-connector-python
+fastapi
+uvicorn
+requests
