@@ -292,4 +292,23 @@ A API e o banco de dados não devem ser expostos publicamente sem a implementaç
 
 ## 🎯 Objetivo
 
-Desenvolver uma solução integrada para auxiliar a gestão de um buffet, facilitando o controle de alimentos, o acompanhamento de sobras e o monitoramento do atendimento por comandas, contribuindo para uma operação mais organizada e eficiente.entes.**
+Desenvolver uma solução integrada para auxiliar a gestão de um buffet, facilitando o controle de alimentos, o acompanhamento de sobras e o monitoramento do atendimento por comandas, contribuindo para uma operação mais organizada e eficientes.
+
+
+---
+
+## 🎥 Demonstração do projeto
+
+Vídeo demonstrativo do Bovinus Augusta, apresentando o funcionamento dos módulos de controle de refeições, sobras e comandas.
+
+[▶️ Assistir ao vídeo de demonstração](https://drive.google.com/file/d/1fEn884S894wCfxtoM-kV2ullkdTs3AHO/view?usp=drivesdk)
+
+---
+
+## 📑 Apresentação do projeto
+
+Os slides apresentam o problema identificado, a proposta da solução, as funcionalidades desenvolvidas, a arquitetura do sistema e os resultados da integração.
+
+[📥 Visualizar apresentação do projeto (PowerPoint)](presentation/Bovinus_Augusta_Slides.pptx)
+
+---
