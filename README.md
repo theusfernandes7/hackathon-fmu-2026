@@ -1,118 +1,295 @@
-# 🥩 Bovinu'S Augusta — Controle de Buffet
+# 🥩 Bovinu'S Augusta — Sistema de Gestão de Buffet
 
-Sistema desenvolvido durante o **Hackathon Tech FMU 2026.2**, com o objetivo de auxiliar no controle das quantidades de alimentos disponibilizadas no buffet e das sobras ao final das refeições.
+Sistema desenvolvido durante o **Hackathon FMU 2026**, com o objetivo de auxiliar a gestão operacional de um buffet por meio do controle de alimentos, refeições, sobras e acompanhamento de comandas.
 
-## 📌 Sobre o projeto
-
-O controle das quantidades de alimentos disponibilizadas e das sobras é importante para compreender melhor o funcionamento de um buffet.
-
-O Bovinu'S Augusta propõe uma solução digital para registrar essas informações, calcular indicadores e organizar os dados, facilitando a análise e apoiando a tomada de decisões.
-
-## 🎯 Problema identificado
-
-A falta de um acompanhamento organizado das quantidades disponibilizadas e das sobras pode dificultar a análise do consumo do buffet e o planejamento das quantidades para futuras refeições.
-
-## 💡 Nossa solução
-
-Desenvolvemos uma aplicação em Python com interface web utilizando Streamlit, permitindo registrar os alimentos, informar as quantidades disponibilizadas e as sobras ao final da operação.
-
-A partir desses registros, o sistema calcula o consumo aparente e o percentual de sobras, apresentando os resultados de forma organizada.
-
-## ⚙️ Funcionalidades
-
-- Cadastro de alimentos e refeições.
-- Registro da quantidade disponibilizada.
-- Registro da quantidade de sobras.
-- Cálculo automático do consumo aparente.
-- Cálculo do percentual de sobras.
-- Histórico de registros.
-- Filtro por tipo de refeição.
-- Resumo das quantidades por alimento.
-- Visualização gráfica dos resultados.
-- Exportação dos dados em CSV.
-
-## 🧮 Indicadores utilizados
-
-**Consumo aparente:**
-
-Quantidade disponibilizada − Quantidade de sobras.
-
-**Percentual de sobras:**
-
-(Quantidade de sobras ÷ Quantidade disponibilizada) × 100.
-
-Esses indicadores ajudam a analisar a relação entre as quantidades disponibilizadas e as sobras registradas.
-
-> **Importante:** O consumo apresentado é aparente, calculado a partir dos registros. O sistema não mede diretamente o que cada cliente consumiu.
-
-## 🛠️ Tecnologias utilizadas
-
-- **Python:** linguagem utilizada no desenvolvimento.
-- **Streamlit:** criação da interface web.
-- **Pandas:** organização e manipulação dos dados.
-- **Matplotlib:** visualização gráfica.
-- **GitHub:** versionamento e armazenamento do código.
-
-## 📂 Estrutura do projeto
-
-```text
-hackathon-fmu-2026/
-│
-├── app.py
-├── README.md
-└── LICENSE
-```
-
-## 🚀 Como executar o projeto
-
-1. Instale o Python.
-2. Instale as dependências:
-
-```bash
-pip install streamlit pandas matplotlib
-```
-
-3. Execute o aplicativo:
-
-```bash
-streamlit run app.py
-```
-
-4. Acesse o endereço disponibilizado pelo Streamlit no navegador.
-
-## 📊 Resultados e demonstração
-
-### 📸 Capturas de tela
-
-#### Painel principal
-![Painel Principal](screenshots/Painel%20Principal.png)
-
-#### Registro de alimentos
-![Registro de Alimentos](screenshots/Registro%20de%20Alimentos.png)
-
-#### Histórico
-![Histórico](screenshots/Hist%C3%B3rico.png)
-
-#### Consumo por alimento
-![Consumo Por Alimento](screenshots/Consumo%20Por%20Alimento.png)
-
-#### Exportação de dados
-![Exportação de Dados](screenshots/Exporta%C3%A7%C3%A3o%20de%20Dados.png)
-
-**Vídeo de demonstração:** link a ser adicionado.
-
-**Apresentação do projeto:** arquivo a ser disponibilizado.
-
-## 🔎 Limitações atuais
-
-Nesta versão, os registros são mantidos durante a sessão de utilização da aplicação. Ainda não existe integração com um banco de dados para armazenamento permanente.
-
-O sistema também não realiza pesagem automática nem identifica individualmente o consumo dos clientes. Os dados são informados manualmente pelo usuário.
-
-## 👥 Desenvolvimento
-
-Projeto desenvolvido para o **Hackathon Tech FMU 2026.2**, com foco em tecnologia aplicada à gestão e ao acompanhamento operacional da Bovinu'S.
+O projeto utiliza Python, Streamlit, FastAPI e MySQL, integrando diferentes módulos em uma única solução.
 
 ---
 
-**Bovinu'S Augusta — Tecnologia para apoiar decisões mais inteligentes.**
+## 📌 Sobre o projeto
+
+O Bovinu'S Augusta possui dois módulos principais:
+
+### 🍽️ 1. Controle de alimentos e refeições
+
+Desenvolvido com Streamlit e integrado ao banco de dados MySQL.
+
+Principais funcionalidades:
+
+- Registro de alimentos disponibilizados.
+- Seleção de refeições, como almoço e jantar.
+- Registro da quantidade disponibilizada e das sobras.
+- Cálculo do consumo aparente.
+- Cálculo do percentual de sobras.
+- Histórico de registros.
+- Indicadores e gráficos.
+- Exportação de dados em CSV.
+- Persistência dos registros no MySQL.
+
+### 📋 2. Controle de comandas
+
+Desenvolvido com Streamlit e integrado à API FastAPI.
+
+O módulo acompanha três etapas do atendimento:
+
+| Etapa | Descrição |
+|---|---|
+| ENTRADA | Registra o início do atendimento. |
+| PESAGEM | Registra o horário da pesagem e o tempo desde a entrada. |
+| SAIDA | Finaliza o atendimento e calcula os tempos correspondentes. |
+
+Principais funcionalidades:
+
+- Registro das etapas das comandas.
+- Identificação por código.
+- Consulta de comandas em andamento.
+- Acompanhamento do status.
+- Armazenamento dos horários no MySQL.
+- Cálculo dos tempos de atendimento.
+- Exibição de indicadores e métricas.
+
+---
+
+## 🏗️ Arquitetura do sistema
+
+O projeto utiliza três componentes principais:
+
+| Componente | Tecnologia | Responsabilidade |
+|---|---|---|
+| Interface | Streamlit | Interface de interação com o usuário. |
+| API | FastAPI | Processamento das etapas das comandas. |
+| Banco de dados | MySQL | Armazenamento e consulta dos registros. |
+
+### Fluxo de funcionamento
+
+**Controle de alimentos:**
+
+Streamlit → MySQL → armazenamento e consulta dos registros.
+
+**Controle de comandas:**
+
+Streamlit → FastAPI → MySQL → retorno das informações para a interface.
+
+---
+
+## 🗄️ Banco de dados
+
+**Nome do banco:** `bobinus_augusta`
+
+O banco possui as seguintes tabelas:
+
+| Tabela | Finalidade |
+|---|---|
+| `alimentos` | Armazena os alimentos cadastrados. |
+| `refeicoes` | Armazena os tipos de refeições. |
+| `controle_refeicao` | Armazena os registros de disponibilização e sobras. |
+| `sessoes_comanda` | Armazena as sessões e os tempos das comandas. |
+
+São utilizados relacionamentos entre tabelas, chaves primárias e chaves estrangeiras para organizar os dados e manter sua integridade.
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- Python
+- Streamlit
+- FastAPI
+- Uvicorn
+- MySQL
+- MySQL Connector/Python
+- Pandas
+- Matplotlib
+- Requests
+
+---
+
+## 📁 Estrutura do projeto
+
+```text
+Bovinus_augusta/
+│
+├── app.py
+├── Bovinus_Back.py
+├── conexao.py
+├── requirements.txt
+│
+└── pages/
+    └── 2_Controle_de_Comandas.py
+```
+
+### Descrição dos arquivos
+
+| Arquivo | Descrição |
+|---|---|
+| `app.py` | Aplicação principal de controle de alimentos e refeições. |
+| `Bovinus_Back.py` | API responsável pelo processamento das comandas. |
+| `conexao.py` | Configuração da conexão com o MySQL. |
+| `requirements.txt` | Lista de dependências Python. |
+| `pages/2_Controle_de_Comandas.py` | Página de controle e acompanhamento das comandas. |
+
+---
+
+## 🚀 Como executar o projeto
+
+### 1. Pré-requisitos
+
+É necessário ter instalado:
+
+- Python 3.
+- MySQL Server.
+- MySQL Workbench (recomendado).
+- Git (opcional, para clonar o repositório).
+
+### 2. Clonar o repositório
+
+```bash
+git clone https://github.com/theusfernandes7/hackathon-fmu-2026.git
+```
+
+Acesse a pasta:
+
+```bash
+cd hackathon-fmu-2026
+```
+
+### 3. Instalar as dependências
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Configurar o banco de dados
+
+Inicie o MySQL Server.
+
+O banco de dados `bobinus_augusta` e suas quatro tabelas precisam estar criados antes de executar a aplicação.
+
+Confira as configurações de conexão nos arquivos:
+
+- `conexao.py`
+- `Bovinus_Back.py`
+
+Configure host, porta, usuário, senha e nome do banco de acordo com seu ambiente MySQL.
+
+### 5. Iniciar a API
+
+Abra um terminal na pasta do projeto e execute:
+
+```bash
+python -m uvicorn Bovinus_Back:app --reload
+```
+
+A API ficará disponível localmente em:
+
+`http://127.0.0.1:8000`
+
+A documentação interativa dos endpoints estará disponível em:
+
+`http://127.0.0.1:8000/docs`
+
+### 6. Iniciar o Streamlit
+
+Abra um segundo terminal na pasta do projeto e execute:
+
+```bash
+python -m streamlit run app.py
+```
+
+A aplicação ficará disponível localmente em:
+
+`http://localhost:8501`
+
+**Importante:** mantenha os dois terminais em execução durante o uso do sistema. A página de comandas depende da API FastAPI para funcionar.
+
+---
+
+## 🔌 Endpoints da API
+
+A API disponibiliza os seguintes endpoints:
+
+| Método | Endpoint | Descrição |
+|---|---|---|
+| POST | `/api/bip` | Registra uma etapa da comanda. |
+| GET | `/api/comandas/ativas` | Consulta as comandas em andamento. |
+| GET | `/api/metricas/resumo` | Consulta os indicadores de atendimento. |
+
+### Exemplo de requisição
+
+Registro de entrada de uma comanda:
+
+```json
+{
+  "codigo": "TESTE001",
+  "etapa": "ENTRADA"
+}
+```
+
+As etapas utilizadas são:
+
+- `ENTRADA`
+- `PESAGEM`
+- `SAIDA`
+
+---
+
+## 📊 Indicadores do sistema
+
+### Controle de alimentos
+
+- Quantidade total disponibilizada.
+- Quantidade total de sobras.
+- Consumo aparente.
+- Percentual de sobras.
+
+### Controle de comandas
+
+- Total de sessões registradas.
+- Total de comandas finalizadas.
+- Média de tempo até a pesagem.
+- Média de tempo após a pesagem.
+- Média de tempo total.
+- Maior tempo até a pesagem.
+- Maior tempo total.
+
+---
+
+## 🧪 Testes realizados
+
+Durante o desenvolvimento, foram realizados testes para verificar o funcionamento dos módulos e sua integração.
+
+- Conexão entre Python e MySQL.
+- Registro e consulta de alimentos e refeições.
+- Persistência dos registros após atualização da aplicação.
+- Consulta de dados utilizando `INNER JOIN`.
+- Testes dos endpoints da API.
+- Registro das etapas de entrada, pesagem e saída.
+- Verificação dos horários e tempos calculados no banco de dados.
+- Integração entre Streamlit e FastAPI.
+- Consulta de comandas ativas.
+- Consulta das métricas de atendimento.
+
+---
+
+## 🔒 Segurança e configuração
+
+O projeto foi desenvolvido para execução local durante o hackathon.
+
+As credenciais de acesso ao MySQL devem ser configuradas de acordo com o ambiente de execução.
+
+Não publique senhas ou outras informações confidenciais no repositório.
+
+A API e o banco de dados não devem ser expostos publicamente sem a implementação de autenticação e medidas adequadas de segurança.
+
+---
+
+## 👥 Desenvolvimento
+
+**Projeto:** Bovinu'S Augusta  
+**Evento:** Hackathon FMU 2026  
+**Repositório:** [GitHub — Hackathon FMU 2026](https://github.com/theusfernandes7/hackathon-fmu-2026)
+
+---
+
+## 🎯 Objetivo
+
+Desenvolver uma solução integrada para auxiliar a gestão de um buffet, facilitando o controle de alimentos, o acompanhamento de sobras e o monitoramento do atendimento por comandas, contribuindo para uma operação mais organizada e eficiente.entes.**
