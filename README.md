@@ -112,9 +112,16 @@ Bovinus_augusta/
 ├── Bovinus_Back.py
 ├── conexao.py
 ├── requirements.txt
+├── README.md
 │
-└── pages/
-    └── 2_Controle_de_Comandas.py
+├── pages/
+│   └── 2_Controle_de_Comandas.py
+│
+├── screenshots/
+│   └── Capturas de tela do sistema
+│
+└── presentation/
+    └── Bovinus_Augusta_Slides.pptx
 ```
 
 ### Descrição dos arquivos
@@ -126,6 +133,8 @@ Bovinus_augusta/
 | `conexao.py` | Configuração da conexão com o MySQL. |
 | `requirements.txt` | Lista de dependências Python. |
 | `pages/2_Controle_de_Comandas.py` | Página de controle e acompanhamento das comandas. |
+| `screenshots/` | Capturas de tela das funcionalidades do sistema. |
+| `presentation/` | Apresentação do projeto em PowerPoint. |
 
 ---
 
@@ -292,14 +301,13 @@ A API e o banco de dados não devem ser expostos publicamente sem a implementaç
 
 ## 🎯 Objetivo
 
-Desenvolver uma solução integrada para auxiliar a gestão de um buffet, facilitando o controle de alimentos, o acompanhamento de sobras e o monitoramento do atendimento por comandas, contribuindo para uma operação mais organizada e eficientes.
-
+Desenvolver uma solução integrada para auxiliar a gestão de um buffet, facilitando o controle de alimentos, o acompanhamento de sobras e o monitoramento do atendimento por comandas, contribuindo para uma operação mais organizada e eficiente.
 
 ---
 
 ## 🎥 Demonstração do projeto
 
-Vídeo demonstrativo do Bovinus Augusta, apresentando o funcionamento dos módulos de controle de refeições, sobras e comandas.
+Vídeo demonstrativo do Bovinu'S Augusta, apresentando o funcionamento dos módulos de controle de refeições, sobras e comandas.
 
 [▶️ Assistir ao vídeo de demonstração](https://drive.google.com/file/d/1fEn884S894wCfxtoM-kV2ullkdTs3AHO/view?usp=drivesdk)
 
@@ -312,3 +320,25 @@ Os slides apresentam o problema identificado, a proposta da solução, as funcio
 [📥 Visualizar apresentação do projeto (PowerPoint)](presentation/Bovinus_Augusta_Slides.pptx)
 
 ---
+
+## 🖥️ Capturas de tela do sistema
+
+### Controle de comandas
+
+<img width="1280" height="800" alt="Controle das comandas" src="https://github.com/user-attachments/assets/6ed87c1d-07a6-4f8d-831f-049a54b4b968" />
+
+### Métricas de comanda
+
+<img width="1280" height="800" alt="Metricas da Comanda" src="https://github.com/user-attachments/assets/a2d0041c-43ae-45f5-b9bd-99df1c8527e0" />
+
+### Relatório e exportação
+
+<img width="1280" height="800" alt="Relatório e exportação" src="https://github.com/user-attachments/assets/412d0d10-6a77-4ec8-8e91-ee8d67df6a39" />
+
+### Resumo por alimento
+
+<img width="1280" height="800" alt="Resumo por alimento" src="https://github.com/user-attachments/assets/dd98cc28-903a-4da5-807d-b55f5a384d06" />
+
+### Tela principal
+
+<img width="1280" height="800" alt="Tela Principal" src="https://github.com/user-attachments/assets/f30294ec-b3f0-46a1-8a70-122fac7e5e4f" />
